@@ -53,10 +53,9 @@ class ProblemSet {
      */
 
     flip(input){
-        let array = input.split('');
         let str = '';
 
-        array.forEach(letter => {
+        input.split('').forEach(letter => {
             str += letter === 'A' ? 'Z' : 'A';
         });
 
