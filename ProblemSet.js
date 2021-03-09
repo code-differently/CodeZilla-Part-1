@@ -17,10 +17,9 @@ class ProblemSet {
     * separated by single spaces.
     */
     countBigWords(input) {
-        const array = input.split(' ');
         let count = 0;
 
-        array.forEach(word => {
+        input.split(' ').forEach(word => {
             if(word.length > 6){
                 count++;
             }
@@ -51,7 +50,6 @@ class ProblemSet {
      * return the string with each character flipped. For example: if the input string is "AAZZA" then your
      * program should return the string "ZZAAZ".
      */
-
     flip(input){
         let str = '';
 
