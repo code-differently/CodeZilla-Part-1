@@ -7,7 +7,7 @@ class ProblemSet {
     and minutes with a colon.
     */
    timeConvert(num){
-       return num;
+       return `${parseInt( (num / 60), 10 )}:${num % 60}`;
    }
 
     /*
@@ -17,8 +17,15 @@ class ProblemSet {
     * separated by single spaces.
     */
     countBigWords(input) {
-        // code goes here
-        return null;
+        let count = 0;
+
+        input.split(' ').forEach(word => {
+            if(word.length > 6){
+                count++;
+            }
+        });
+
+        return count;
     }
 
     /*
@@ -28,7 +35,14 @@ class ProblemSet {
     * 0 tens, 1 twenty, 3 fifties, and 0 one hundreds
     */
     countingBills(input) {
-        return -1;
+        return ( 
+            input[0] +
+            input[1] * 5 +
+            input[2] * 10 +
+            input[3] * 20 + 
+            input[4] * 50 +
+            input[5] * 100
+         );
     }
 
     /**
@@ -36,9 +50,14 @@ class ProblemSet {
      * return the string with each character flipped. For example: if the input string is "AAZZA" then your
      * program should return the string "ZZAAZ".
      */
-
     flip(input){
-        return null;
+        let str = '';
+
+        input.split('').forEach(letter => {
+            str += letter === 'A' ? 'Z' : 'A';
+        });
+
+        return str;
     }
 
 }
