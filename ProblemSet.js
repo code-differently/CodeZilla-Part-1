@@ -19,11 +19,13 @@ class ProblemSet {
     countBigWords(input) {
         const array = input.split(' ');
         let count = 0;
+
         array.forEach(word => {
             if(word.length > 6){
                 count++;
             }
         });
+
         return count;
     }
 
@@ -55,12 +57,7 @@ class ProblemSet {
         let str = '';
 
         array.forEach(letter => {
-            if(letter === 'A'){
-                str += 'Z';
-            } 
-            else {
-                str += 'A';
-            }
+            str += letter === 'A' ? 'Z' : 'A';
         });
 
         return str;
