@@ -7,7 +7,12 @@ class ProblemSet {
     and minutes with a colon.
     */
    timeConvert(num){
-       return num;
+       //calculate hour ( num / 60) and round it down
+        const hour = Math.floor(num / 60);
+        //calculate minutes (num % 60)
+        const minutes = num % 60;
+        //display values
+       return `${hour}:${minutes}`
    }
 
     /*
@@ -18,7 +23,16 @@ class ProblemSet {
     */
     countBigWords(input) {
         // code goes here
-        return null;
+        //declare an array where to store biggest words
+        let noOfBiggestWords = 0
+            //check if word is greater than 6
+            input.split(' ').forEach(i =>{ 
+            if(i.length >6)
+            //store the word in the biggestWord array
+            noOfBiggestWords ++});
+        
+            
+        return noOfBiggestWords;
     }
 
     /*
@@ -28,7 +42,16 @@ class ProblemSet {
     * 0 tens, 1 twenty, 3 fifties, and 0 one hundreds
     */
     countingBills(input) {
-        return -1;
+        //map for currency
+        const billsValue = [1, 5, 10, 20, 50, 100];
+        //have a variable to store result
+        let result= 0;
+
+         input.map((i, index) => {
+            result = result +( i * billsValue[index]);
+            
+        })   
+        return result;
     }
 
     /**
@@ -38,7 +61,9 @@ class ProblemSet {
      */
 
     flip(input){
-        return null;
+        let finalWord =[];
+        input.split('').forEach( i =>{ i === 'Z'? finalWord.push('A') : finalWord.push('Z')})
+        return finalWord.join('');
     }
 
 }
