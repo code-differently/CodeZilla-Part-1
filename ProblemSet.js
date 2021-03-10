@@ -6,8 +6,17 @@ class ProblemSet {
     (ie. if num = 63 then the output should be 1:3). Separate the number of hours 
     and minutes with a colon.
     */
-   timeConvert(num){
-       return num;
+   timeConvert(num) {
+       // calculate hours
+        let hours = Math.floor(num / 60); // this is holding the hours
+
+       // calculate mins
+       let mins = num % 60; // this is holding the remainder of mins
+
+       // output results
+       let results = `${hours}:${mins}`;
+
+       return results;
    }
 
     /*
@@ -17,8 +26,25 @@ class ProblemSet {
     * separated by single spaces.
     */
     countBigWords(input) {
-        // code goes here
-        return null;
+        // create placeholder to calculate number of words with 6 or more letters
+        let wordCount = 0;
+
+        // convert and split string parameter into an array
+        let splitString = input.split(' ');
+
+        // calculate the legnth of the array
+        let arrayLength = splitString.length;
+
+        // cycle through each array index of each word
+        for (let i = 0; i < arrayLength; i++) {
+            // set condition to determine numbers of letters in each word
+            if (splitString[i].length > 6) {
+                wordCount+= 1;
+            }
+        }
+
+        //output results
+        return wordCount;
     }
 
     /*
@@ -28,7 +54,19 @@ class ProblemSet {
     * 0 tens, 1 twenty, 3 fifties, and 0 one hundreds
     */
     countingBills(input) {
-        return -1;
+        // determine the currency values to be used
+        const currency = [1, 5, 10, 20, 50, 100];
+         
+        // create a placeholder to hold the sum of the denominations
+        let sum = 0;
+
+        // cycle through each array index and calculate the demonation related to each index
+        for (let i = 0; i < 6; i++) {
+            sum+= (input[i] * currency[i]);
+        }
+
+        // output results
+        return sum;
     }
 
     /**
@@ -37,10 +75,13 @@ class ProblemSet {
      * program should return the string "ZZAAZ".
      */
 
-    flip(input){
-        return null;
+    flip(input) {
+        // select every letter A and Z and swap there places
+        let swapLetters = input.replace(/A/g, "_").replace(/Z/g, "A").replace(/_/g, "Z");
+        
+        // output results
+        return swapLetters
     }
-
 }
 
 module.exports = ProblemSet;
