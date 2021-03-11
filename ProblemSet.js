@@ -7,7 +7,13 @@ class ProblemSet {
     and minutes with a colon.
     */
    timeConvert(num){
-       return num;
+       // find number of hours and round down
+       let hours = Math.floor(num/60);
+       // find remaining minutes in addition to number of hours
+       let mint = (num % 60);
+        // combine both hours and minutes seprating them using colon
+       let result = (hours + ":" + mint);
+       return result;
    }
 
     /*
@@ -17,8 +23,21 @@ class ProblemSet {
     * separated by single spaces.
     */
     countBigWords(input) {
-        // code goes here
-        return null;
+        // Split the input
+        let arr = input.split(" ");
+        // Start counter from 0
+        let count = 0;
+        //if array contains more than 6 lettes word, add 1 otherwise neglect word and keep moving further
+        //until whole string input is completed
+        arr.forEach(word =>{
+            if (word.length > 6){
+                count++;
+            }
+        
+        });
+
+        // return the count of all words with more than 6 letters
+        return count;
     }
 
     /*
@@ -28,7 +47,21 @@ class ProblemSet {
     * 0 tens, 1 twenty, 3 fifties, and 0 one hundreds
     */
     countingBills(input) {
-        return -1;
+        // enter dollar values in array form
+        let dollars = [1, 5, 10, 20, 50, 100];
+         
+        // create a placeholder to hold the sum of the denominations
+        let sum = 0;
+
+        // Iterate in array indices and get the value of each index position
+        // go up to 6 values in index position
+        for (let i = 0; i < 6; i++) {
+            sum+= (input[i] * dollars[i]);
+        }
+
+        // get the results
+        return sum;
+        
     }
 
     /**
@@ -38,7 +71,14 @@ class ProblemSet {
      */
 
     flip(input){
-        return null;
+        
+        // get letters from A to Z and swap letter values
+        // using regex with global parameter
+        // 
+        let swapChr = input.replace(/A/g, "_").replace(/Z/g, "A").replace(/_/g, "Z");
+        
+        // output results
+        return swapChr;
     }
 
 }
