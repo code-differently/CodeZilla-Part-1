@@ -28,8 +28,24 @@ class ProblemSet {
     * separated by single spaces.
     */
     countBigWords(input) {
-        // code goes here
-        return null;
+      // code goes here
+      //break string into separate words
+      let words = input.split(" ");
+      //create a count
+      let counter = 0;
+      //iterate through each word in the string
+      for (let i = 0; i < words.length; i++) {
+        //check if each word's length is greater that 6
+        //check if each word's length is grater that 6
+        //if it is increase the counter by 1
+        if (words[i].length > 6) {
+          counter++;
+        }
+      }
+
+      //return the counter
+
+      return counter;
     }
 
     /*
