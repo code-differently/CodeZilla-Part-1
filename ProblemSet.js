@@ -7,7 +7,18 @@ class ProblemSet {
     and minutes with a colon.
     */
    timeConvert(num){
-       return num;
+     //calculate number of hours
+     // divide by 60
+     //rounding down
+     let hours = Math.floor(num / 60);
+
+     //calculate number of minutes
+     // find the remainder after dividing by 60
+     let mins = num % 60;
+     //craft the output
+     let convertedTime = `${hours}:${mins}`;
+
+     return convertedTime;
    }
 
     /*
