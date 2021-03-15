@@ -36,7 +36,7 @@ test("countBigWords test02", () => {
     let problem = new ProblemSet();
     let expected = 2;
 
-    let actual = problem.countBigWords("Dallas Cowboys Suck Go Philedelphia Eagles");
+    let actual = problem.countBigWords("Dallas Cowboys Suck Go Philadelphia Eagles");
 
     expect(actual).toEqual(expected);
 });
@@ -67,8 +67,8 @@ test("flip test01", () => {
 
     let problem = new ProblemSet();
     let expected = "ZAZAAAZZ";
-
-    let actual = problem.countingBills("AZAZZZAA");
+// changed problem.countingBills to problem.flip to test  correct problem for output
+    let actual = problem.flip("AZAZZZAA");
 
     expect(actual).toEqual(expected);
 
@@ -78,8 +78,8 @@ test("flip test02", () => {
 
     let problem = new ProblemSet();
     let expected = "AZAZZZAAZA";
-
-    let actual = problem.countingBills("ZAZAAAZZAZ");
+// changed problem.countingBills to problem.flip to test correct problem for output
+    let actual = problem.flip("ZAZAAAZZAZ");
 
     expect(actual).toEqual(expected);
 
