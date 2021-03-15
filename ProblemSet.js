@@ -36,7 +36,6 @@ class ProblemSet {
       //iterate through each word in the string
       for (let i = 0; i < words.length; i++) {
         //check if each word's length is greater that 6
-        //check if each word's length is grater that 6
         //if it is increase the counter by 1
         if (words[i].length > 6) {
           counter++;
@@ -55,7 +54,21 @@ class ProblemSet {
     * 0 tens, 1 twenty, 3 fifties, and 0 one hundreds
     */
     countingBills(input) {
-        return -1;
+      //have an array of different bills
+      //assign values to each bill
+      //multiply each bill value by counter
+      let ones = input[0] * 1;
+      let fives = input[1] * 5;
+      let tens = input[2] * 10;
+      let twenties = input[3] * 20;
+      let fifties = input[4] * 50;
+      let hundreds = input[5] * 100;
+
+      //add a counter for each array position
+
+      //add all those together
+      let total = ones + fives + tens + twenties + fifties + hundreds;
+      return total;
     }
 
     /**
