@@ -1,0 +1,89 @@
+class ProblemSet {
+
+    /*
+    Have the function timeConvert(num) take the num parameter being passed and 
+    return the number of hours and minutes the parameter converts to 
+    (ie. if num = 63 then the output should be 1:3). Separate the number of hours 
+    and minutes with a colon.
+    */
+   timeConvert(num) {
+
+        //calc # of hrs
+        //divide # by 60 (60 min)
+        var hours = Math.floor(num/60);
+
+        //round to nearset number
+        //get remainer of # divided by 60
+        var mins = num % 60;
+
+        //make sure have semicolon
+        //input to output 
+        var conversion = `${hours} : ${mins}`;
+   
+       return conversion;
+   }
+
+    /*
+    * Have the countBigWords(input) take the str string parameter being passed
+    * and return the number of words with more than 6 letters
+    * (e.g. "Never eat shredded wheat or cake" would return 1). Words will be
+    * separated by single spaces.
+    */
+    countBigWords(input){
+        var arr = input.match(/[a-z0-6]+/gi);
+        var a = "";
+        for (i = 0; i <= arr.length; i++) {
+            if (arr[i].length > a.length) {
+                a = arr[i];
+            }
+        }
+        return a;
+    }
+
+}
+    /*
+    * Have the countingBills(input) take in an array containing counts of
+    * denominations of dollars and return the total amount of money represented. 
+    * (e.g. [0, 2, 0, 1, 3, 0] would return 180) The array represents 0 ones, 2 fives,
+    * 0 tens, 1 twenty, 3 fifties, and 0 one hundreds
+    */
+    countingBills(input) {
+            
+        //// use/set an array for all the bills ones, fives, tens, twenty, fifties, hundreds
+            let money = [1,5,10,20,50,100];
+
+            ///  sum set to zero 
+            let sum = 0;
+
+            ///  using the for loop method through money
+                for(let i = 0; i < input.length; i++); {
+
+            /// results the input multipied with money        
+               sum += (input[i] * money[i]);
+           }
+        
+           return sum;
+ }
+    /**
+     * Have the function flip(input) take the input parameter, comprised of As and Zs being passed and
+     * return the string with each character flipped. For example: if the input string is "AAZZA" then your
+     * program should return the string "ZZAAZ".
+     */
+
+
+
+    flip(str) {
+
+       var backwardString = "";
+        var splitString = input.split(''); 
+        for (var i = splitString.length - 1; i >= 0; i--) {
+            backwardString += splitString[i];
+     
+        }
+            return backwardString;
+    }
+     
+    
+
+
+module.exports = ProblemSet;
