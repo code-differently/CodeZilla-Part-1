@@ -64,24 +64,21 @@ test("countingBills test02", () => {
 });
 
 test("flip test01", () => {
-
     let problem = new ProblemSet();
+
     let expected = "ZAZAAAZZ";
 
-    let actual = problem.countingBills("AZAZZZAA");
-
+    let actual = problem.flip("AZAZZZAA");
+    
     expect(actual).toEqual(expected);
-
 });
 
 test("flip test02", () => {
-
     let problem = new ProblemSet();
+
     let expected = "AZAZZZAAZA";
 
-    let actual = problem.countingBills("ZAZAAAZZAZ");
+    let actual = problem.flip("ZAZAAAZZAZ");
 
     expect(actual).toEqual(expected);
-
 });
-
