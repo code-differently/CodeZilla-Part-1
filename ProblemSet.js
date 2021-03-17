@@ -7,7 +7,14 @@ class ProblemSet {
     and minutes with a colon.
     */
    timeConvert(num){
-       return num;
+       // Divide num by 60
+       // Round down
+       let hours = Math.floor(num/60);
+       // Remainder is minutes
+       let minutes = num % 60;
+       // Return hours:minutes
+       let results = hours + ":" + minutes;
+       return results;
    }
 
     /*
@@ -17,9 +24,18 @@ class ProblemSet {
     * separated by single spaces.
     */
     countBigWords(input) {
-        // code goes here
-        return null;
-    }
+        // split string
+        // count letters in each word with a four loop
+        // return number of words with more than 6 letters
+        let str = input.split(” “);
+        let numWords = 0;
+        for (let i = 0; i < str.length; i++) {
+            if (str[i].length > 6) {
+                numWords++;
+            };
+        };
+        return numWords;
+    };
 
     /*
     * Have the countingBills(input) take in an array containing counts of
@@ -28,6 +44,14 @@ class ProblemSet {
     * 0 tens, 1 twenty, 3 fifties, and 0 one hundreds
     */
     countingBills(input) {
+        // Assign dollar amount to each index of the array
+        let billCount = [1, 5, 10, 20, 50, 100];
+        // Multiply each bill by input
+        array.forEach(element => {
+           
+        });
+        // Add the totals of the dollar amounts
+        // Return total amount
         return -1;
     }
 
