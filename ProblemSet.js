@@ -68,7 +68,7 @@ class ProblemSet {
      */
 
     flip(input){
-        //  set empyt variable 
+        //  set empty variable 
         let string = '';
 
         //  split eatch letter, iterate through each letter. If the letter is A
@@ -78,7 +78,7 @@ class ProblemSet {
         input.split('').forEach(letter => {
             string += letter === 'A' ? 'Z' : 'A';
         });
-
+        console.log(string);
         // return populated string with reverse output
         return string;
     }
